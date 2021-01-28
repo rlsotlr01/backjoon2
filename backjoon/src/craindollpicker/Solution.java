@@ -4,34 +4,35 @@ import java.util.ArrayList;
 
 class Solution{
 	
+//	ë„í›ˆì´í˜• ì´ê±°ì«Œ ëœ¯ì–´ê³ ì³ì£¼ì„¸ìš”. ì œê°€ í•˜ê¸° ì‹«ì–´ìš”.
 	
 	public int solution(int[][] board, int[] moves) {
 		int answer = 0;
 		ArrayList<Integer> basket = new ArrayList<>();
-//  moves ¾ÈÀÇ ¼ýÀÚ´Â j°ªÀ¸·Î (¿­)
-//  ¸¸¾à Ã¹¹øÂ° °ªÀÌ 3ÀÌ´Ù -> 3¿­¿¡ Ã¹¹øÂ°·Î ³ª¿À´Â °ª(0ÀÌ ¾Æ´Ñ °ª)À» ²¨³»¼­ ¹Ù±¸´Ï.
-//  ±×¸®°í ±× 3¿­¿¡ Ã¹¹øÂ°¿¡ ÇØ´çÇÏ´Â °ªÀ» board ¿¡¼­ 0À¸·Î ¹Ù²ãÁà¾ß ÇÔ.
-//  ¸¸¾à¿¡ moveÀÇ °ª°ú ±× Àü°ªÀÌ °°À» ¶© answer += 2 ÇÏ°í,
-//  ±× µÎ°³ °ªÀ» 0À¸·Î ¹Ù²ãÁà¾ß ÇÔ.
+//  moves ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú´ï¿½ jï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½)
+//  ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ 3ï¿½Ì´ï¿½ -> 3ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(0ï¿½ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù±ï¿½ï¿½ï¿½.
+//  ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â°ï¿½ï¿½ ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ board ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
+//  ï¿½ï¿½ï¿½à¿¡ moveï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ answer += 2 ï¿½Ï°ï¿½,
+//  ï¿½ï¿½ ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½.
 //  
 		
 		for(int i=0; i<moves.length; i++) {
-			// moves Çà·Ä¿¡ ÀÖ´Â °ªµéÀ» ÇÏ³ªÇÏ³ª basket ¿¡ ´ã´Â´Ù.
+			// moves ï¿½ï¿½Ä¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï³ï¿½ï¿½Ï³ï¿½ basket ï¿½ï¿½ ï¿½ï¿½Â´ï¿½.
 			int k = moves[i]-1;
 			for(int j=0; j<board.length; j++) {
 				if(board[j][k] != 0) {
-					basket.add(board[j][k]); // »Ì°í,
-					board[j][k] = 0; // ±× °ª ¾ø´Â °ªÀ¸·Î ÇØÁÖ°í,
+					basket.add(board[j][k]); // ï¿½Ì°ï¿½,
+					board[j][k] = 0; // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö°ï¿½,
 					break;
 				}
 			}
 		}
 		
-		
+
 		
 		
 		while(true) {
-//			½ºÅÃ&Å¥ °øºÎÇÏ±â.
+//			ï¿½ï¿½ï¿½ï¿½&Å¥ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½.
 			int answercurrent = answer;
 			for(int i=1; i<basket.size(); i++) {
 				if((basket.get(i)==basket.get(i-1))&&basket.get(i)!=0) {
@@ -46,7 +47,7 @@ class Solution{
 				break;
 			}
 		}
-		// ÀÌ°Å ¹æ½ÄÀ» ´Ù¸£°Ô ÇØ¾ß µÉ µí. 		
+		// ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ ï¿½ï¿½ ï¿½ï¿½. 		
 		return answer;
 	}
 	
